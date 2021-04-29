@@ -369,13 +369,16 @@ img {
   background: #f5f4fa;
   border-color: transparent;
   border-radius: 4px;
-  /*margin-left: 8px;*/
+  transition-duration: 250ms;
 }
 .btn-filter:hover,
 .btn-filter:focus {
+  transition-duration: 250ms;
+  opacity: 1;
   color: var(--alt-title-cl);
   background-color: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .about-title-item {
   font-size: 14px;
@@ -543,10 +546,12 @@ img {
   text-decoration: none;
 }
 
-.team-name-portfolio-link:hover,
-.team-name-portfolio-link:focus {
+.team-name-portfolio-link:hover .thumb-description,
+.team-name-portfolio-link:focus .thumb-description {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  opacity: 1;
+  transition-duration: 250ms;
 }
 .team-name-portfolio:hover,
 .team-name-portfolio:focus {
@@ -562,6 +567,24 @@ img {
 }
 .team-name-portfolio:nth-child(3n + 1) {
   margin-left: 0;
+}
+.portfolio-thumb {
+  position: relative;
+}
+.thumb-description {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  background-color: rgba(33, 150, 243, 0.9);
+  color: #ffffff;
+  opacity: 0;
 }
 .container-footer {
   width: 231px;
@@ -603,4 +626,15 @@ img {
   position: absolute;
   top: 15px;
   right: 15px;
+}
+.work-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
