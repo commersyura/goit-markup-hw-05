@@ -109,6 +109,15 @@ img {
   transition-duration: 2250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.nav-decoration::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
+  margin-bottom: -93px;
+}
 .list {
   list-style: none;
   padding-left: 0;
@@ -137,6 +146,7 @@ img {
 }
 .menu-item:not(:last-child) {
   margin-right: 50px;
+  position: relative;
 }
 .logo-botom {
   font-family: var(--second-font);
@@ -558,6 +568,7 @@ img {
   background: #ffffff;
 }
 .team-name-portfolio {
+  position: relative;
   /*padding: 30px 32px;*/
   margin-left: 30px;
   margin-top: 30px;
@@ -578,12 +589,10 @@ img {
   transition-duration: 2250ms;*/
 }
 
-.team-name-portfolio-link:hover .jump-portfolio,
-.team-name-portfolio-link:focus .jump-portfolio {
+.team-name-portfolio-link:hover,
+.team-name-portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  opacity: 1;
-  transition-duration: 2250ms;
 }
 
 .team-name-portfolio:hover,
@@ -603,9 +612,11 @@ img {
 }
 .portfolio-thumb {
   position: relative;
+  overflow: hidden;
 }
 .thumb-description {
-  /*position: absolute;*/
+  position: absolute;
+
   display: block;
   top: 0;
   left: 0;
@@ -617,10 +628,33 @@ img {
   letter-spacing: 0.03em;
   background-color: rgba(33, 150, 243, 0.9);
   color: #ffffff;
+
   transition-property: background-color;
   transition-duration: 2250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(400px);
 }
+.thumb-description-visible {
+  position: absolute;
+
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  background-color: rgba(33, 150, 243, 0.9);
+  color: #ffffff;
+
+  transition-property: background-color;
+  transition-duration: 2250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
+}
+
 .container-footer {
   width: 231px;
   height: 132px;
@@ -687,8 +721,4 @@ img {
 }
 .card-thumb {
   position: relative;
-}
-.jump-portfolio {
-  background-color: rgba(33, 150, 243, 0.9);
-  color: #ffffff;
 }
